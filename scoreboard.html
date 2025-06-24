@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #181828;
+            color: #fff;
+        }
+        .scoreboard-container {
+            width: 100%;
+            max-width: 1280px; /* 16:9 aspect ratio */
+            height: 720px; /* 16:9 aspect ratio */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .scoreboard {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .team {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .team:last-child {
+            border-bottom: none;
+        }
+        .team-name {
+            font-size: 1.5em;
+        }
+        .team-score {
+            font-size: 1.5em;
+            color: #facc15;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard-container">
+        <h1>Live Scoreboard</h1>
+        <div class="scoreboard" id="scoreboard">
+            <!-- Dynamic team scores will be injected here -->
+        </div>
+    </div>
+    <script src="assets/main.js"></script>
+    <script src="src/scoreboard.js"></script>
+</body>
+</html>

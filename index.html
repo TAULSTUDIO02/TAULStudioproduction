@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS Broadcast Overlay</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/main.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #181828;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            background-color: #232232;
+        }
+        .overlay, .scoreboard, .alive-status {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .overlay.active, .scoreboard.active, .alive-status.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay active">
+            <h1>Overlay</h1>
+            <p>Live updates and relevant information for broadcasting.</p>
+        </div>
+        <div class="scoreboard">
+            <h1>Scoreboard</h1>
+            <p>Real-time scores and team information.</p>
+        </div>
+        <div class="alive-status">
+            <h1>Alive Status</h1>
+            <p>Current status of participants or teams.</p>
+        </div>
+    </div>
+    <script>
+        function showFeature(feature) {
+            document.querySelectorAll('.overlay, .scoreboard, .alive-status').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`.${feature}`).classList.add('active');
+        }
+
+        // Example of how to switch features
+        // showFeature('scoreboard'); // Call this function to switch to scoreboard
+    </script>
+</body>
+</html>
